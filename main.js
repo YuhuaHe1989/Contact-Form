@@ -15,33 +15,41 @@ function init(){
   $('#list').on('change','input',ifupdate);
   $('#list').on('click','.remove',removeContact);
   $('.modalSaveBtn').on('click',modalUpdate);
+  $('.modalCloseBtn').on('click',modalClose);
+  $('#modalWindowClose').on('click',modalClose);
   $('.sort').on('click',sort);
 }
 
-function modalUpdate(){
-  console.log('modal');
-  console.log(updateIndex);
+function modalClose(){
+  //console.log('modalWindowClose');
+  lists[updateIndex].update = false;
+  //console.log(lists[updateIndex]);
   
+  newList();
+  saveDataToLocalStorage();
+}
 
+function modalUpdate(){
+  console.log('update');
   var $modalName = $('#modalInputName').val();
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
   var $modalAdress = $('#modalInputAdress').val();
-    
+
   lists[updateIndex].name = $modalName;
   lists[updateIndex].email = $modalEmail;
   lists[updateIndex].phone = $modalPhone;
   lists[updateIndex].address = $modalAdress;
   lists[updateIndex].update = false;
 
-
+  $('#myModal').modal('hide');
   newList();
   saveDataToLocalStorage();
+
 }
 
 function sort(){
   var btnIndex = $(this).closest('th').index();
-  console.log(btnIndex);
 
   if(btnIndex === 0){
     lists.sort(function(a,b){
@@ -118,6 +126,11 @@ function addList(){
 		address: address,
     update: false
 	};
+
+  $('#name').val('');
+  $('#email').val('');
+  $('#phone').val('');
+  $('#address').val('');
 
 	lists.push(list);
 
