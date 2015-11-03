@@ -30,16 +30,26 @@ function modalClose(){
 }
 
 function modalUpdate(){
-  console.log('update');
+
+
   var $modalName = $('#modalInputName').val();
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
   var $modalAdress = $('#modalInputAdress').val();
+  console.log(typeof $modalName);
 
+  if($modalName !== ''){
   lists[updateIndex].name = $modalName;
+  }
+  if($modalEmail !== ''){
   lists[updateIndex].email = $modalEmail;
+  }
+  if($modalPhone !== ''){
   lists[updateIndex].phone = $modalPhone;
+  }
+  if($modalAdress !== ''){
   lists[updateIndex].address = $modalAdress;
+  }
   lists[updateIndex].update = false;
 
   $('#myModal').modal('hide');
