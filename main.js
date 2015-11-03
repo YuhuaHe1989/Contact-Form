@@ -3,7 +3,7 @@
 'use strict';
 
 $(document).ready(init);
-
+  
 var updateIndex;
 var lists = localStorage.lists ? JSON.parse(localStorage.lists) : [];
 newList();
