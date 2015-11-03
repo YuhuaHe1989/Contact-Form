@@ -16,14 +16,21 @@ function init(){
   $('#list').on('click','.remove',removeContact);
   $('.modalSaveBtn').on('click',modalUpdate);
   $('.modalCloseBtn').on('click',modalClose);
+  $('#modalWindowClose').on('click',modalClose);
   $('.sort').on('click',sort);
 }
 
 function modalClose(){
+  console.log('modalWindowClose');
   lists[updateIndex].update = false;
+  console.log(lists[updateIndex]);
+
+  newList();
+  saveDataToLocalStorage();
 }
 
 function modalUpdate(){
+  console.log('update');
   var $modalName = $('#modalInputName').val();
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
@@ -42,7 +49,6 @@ function modalUpdate(){
 
 function sort(){
   var btnIndex = $(this).closest('th').index();
-  console.log(btnIndex);
 
   if(btnIndex === 0){
     lists.sort(function(a,b){
