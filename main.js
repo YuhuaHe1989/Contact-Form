@@ -15,14 +15,15 @@ function init(){
   $('#list').on('change','input',ifupdate);
   $('#list').on('click','.remove',removeContact);
   $('.modalSaveBtn').on('click',modalUpdate);
+  $('.modalCloseBtn').on('click',modalClose);
   $('.sort').on('click',sort);
 }
 
-function modalUpdate(){
-  console.log('modal');
-  console.log(updateIndex);
-  
+function modalClose(){
+  lists[updateIndex].update = false;
+}
 
+function modalUpdate(){
   var $modalName = $('#modalInputName').val();
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
@@ -118,6 +119,11 @@ function addList(){
 		address: address,
     update: false
 	};
+
+  $('#name').val('');
+  $('#email').val('');
+  $('#phone').val('');
+  $('#address').val('');
 
 	lists.push(list);
 
