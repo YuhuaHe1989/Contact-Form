@@ -21,9 +21,9 @@ function init(){
 }
 
 function modalClose(){
-  console.log('modalWindowClose');
+  //console.log('modalWindowClose');
   lists[updateIndex].update = false;
-  console.log(lists[updateIndex]);
+  //console.log(lists[updateIndex]);
   
   newList();
   saveDataToLocalStorage();
@@ -41,7 +41,7 @@ function modalUpdate(){
   lists[updateIndex].phone = $modalPhone;
   lists[updateIndex].address = $modalAdress;
   lists[updateIndex].update = false;
-
+$('#myModal').modal('hide');
   newList();
   saveDataToLocalStorage();
 
