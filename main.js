@@ -24,7 +24,7 @@ function modalClose(){
   console.log('modalWindowClose');
   lists[updateIndex].update = false;
   console.log(lists[updateIndex]);
-
+  
   newList();
   saveDataToLocalStorage();
 }
@@ -42,9 +42,9 @@ function modalUpdate(){
   lists[updateIndex].address = $modalAdress;
   lists[updateIndex].update = false;
 
-
   newList();
   saveDataToLocalStorage();
+
 }
 
 function sort(){
