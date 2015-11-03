@@ -27,7 +27,7 @@ function modalUpdate(){
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
   var $modalAdress = $('#modalInputAdress').val();
-
+    
   lists[updateIndex].name = $modalName;
   lists[updateIndex].email = $modalEmail;
   lists[updateIndex].phone = $modalPhone;
