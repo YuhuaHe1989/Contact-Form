@@ -24,24 +24,35 @@ function modalClose(){
   //console.log('modalWindowClose');
   lists[updateIndex].update = false;
   //console.log(lists[updateIndex]);
-  
+
   newList();
   saveDataToLocalStorage();
 }
 
 function modalUpdate(){
-  console.log('update');
+
+
   var $modalName = $('#modalInputName').val();
   var $modalEmail = $('#modalInputEmail').val();
   var $modalPhone = $('#modalInputPhone').val();
   var $modalAdress = $('#modalInputAdress').val();
+  console.log(typeof $modalName);
 
+  if($modalName !== ''){
   lists[updateIndex].name = $modalName;
+  }
+  if($modalEmail !== ''){
   lists[updateIndex].email = $modalEmail;
+  }
+  if($modalPhone !== ''){
   lists[updateIndex].phone = $modalPhone;
+  }
+  if($modalAdress !== ''){
   lists[updateIndex].address = $modalAdress;
+  }
   lists[updateIndex].update = false;
-$('#myModal').modal('hide');
+
+  $('#myModal').modal('hide');
   newList();
   saveDataToLocalStorage();
 
@@ -72,7 +83,7 @@ function sort(){
   }
   //console.log(lists[0].name);
   newList();
-  saveDataToLocalStorage();  
+  saveDataToLocalStorage();
 }
 
 function ifupdate(event){
@@ -166,7 +177,7 @@ function newList(){
     return $tr;
 	});
 
-	$('#list').append(contactList);	
+	$('#list').append(contactList);
 }
 
 function saveDataToLocalStorage(){
@@ -174,14 +185,3 @@ function saveDataToLocalStorage(){
 }
 
 })();
-
-
-
-
-
-
-
-
-
-
-
