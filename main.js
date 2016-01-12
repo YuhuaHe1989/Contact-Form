@@ -3,7 +3,7 @@
 'use strict';
 
 $(document).ready(init);
-  
+
 var updateIndex;
 var lists = localStorage.lists ? JSON.parse(localStorage.lists) : [];
 newList();
@@ -24,7 +24,7 @@ function modalClose(){
   //console.log('modalWindowClose');
   lists[updateIndex].update = false;
   //console.log(lists[updateIndex]);
-  
+
   newList();
   saveDataToLocalStorage();
 }
@@ -83,7 +83,7 @@ function sort(){
   }
   //console.log(lists[0].name);
   newList();
-  saveDataToLocalStorage();  
+  saveDataToLocalStorage();
 }
 
 function ifupdate(event){
@@ -177,7 +177,7 @@ function newList(){
     return $tr;
 	});
 
-	$('#list').append(contactList);	
+	$('#list').append(contactList);
 }
 
 function saveDataToLocalStorage(){
@@ -185,14 +185,3 @@ function saveDataToLocalStorage(){
 }
 
 })();
-
-
-
-
-
-
-
-
-
-
-
